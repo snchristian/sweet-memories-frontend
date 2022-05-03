@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 
-import { Wrapper } from '../style_Components/CartStyle';
+import { Wrapper } from '../styled_components/CartStyle';
 
 function CartItem ({item,handleAddToCart,handleRemoveFromCart}){
 
