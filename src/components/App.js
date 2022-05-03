@@ -22,6 +22,7 @@ fetch("http://localhost:9292/candies")
       <Navbar/>
       <Routes>
        <Route path="/" element={<Home/>}/>
+       <Route path="/candies" element={<CandyList candies={candies}/>}/>
      </Routes>
     </div>  
   );
