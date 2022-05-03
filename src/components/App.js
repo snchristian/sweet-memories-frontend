@@ -2,9 +2,9 @@ import React, {useState,useEffect} from "react"
 import { Route, Routes } from "react-router-dom";
 import OrderForm from "./OrderForm";
 import Home from "./Home"
-
 import CandyList from './CandyList';
 import Navbar from "./Navbar";
+import OrderSucess from "./OrderSucess";
 
 function App() {
   const [candies,setCandies] = useState ([])
@@ -36,6 +36,7 @@ const toggleCartClose = () => {
        <Route path="/" element={<Home/>}/>
        <Route path="/candies" element={<CandyList candies={candies} toggleCartClose={toggleCartClose} toggleCart={toggleCart}/>}/>
        <Route path="/checkout" element={<OrderForm/>}/>
+       <Route path='/confirmation' element={<OrderSucess/>}/>
      </Routes>
     </div>  
   );
