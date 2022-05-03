@@ -49,6 +49,7 @@ function CandyList ({candies,toggleCart,toggleCartClose}){
                     <CandyItem 
                     key={candy.id}
                     candy={candy}
+                    handleAddToCart={handleAddToCart}
                     />
                 </CardContainer>
     )
