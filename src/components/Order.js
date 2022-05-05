@@ -1,8 +1,8 @@
 import React, {useState,useEffect} from "react"
-import { Hr,ProductCard, Title } from "../styld_components/OrderStyle"
+import { Hr,ProductCard, Title } from "../styled_components/OrderStyle"
 
 
-function Orders(){
+function Order(){
 
     const[order,setOrder]=useState([])
 
@@ -69,4 +69,4 @@ function Orders(){
 
 }
 
-export default Orders
+export default Order

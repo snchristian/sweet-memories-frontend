@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Card = styled.div`
 
+
 .card{
     overflow:hidden;
     border-radius:25px;

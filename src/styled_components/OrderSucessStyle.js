@@ -38,6 +38,7 @@ margin 20px 10px 0px 0px;
 justify-content:center;
 margin-left:230px;
 border-radius:10px
+cursor:pointer;
 `
 export const Content = styled.p`
 text-align: center;

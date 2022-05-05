@@ -21,7 +21,7 @@ function Navbar ({toggleCartOpen}) {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar position="static"  style={{backgroundColor: "salmon"}}>
           <Toolbar>
                 <Typography variant="h6"component="div" sx={{ flexGrow: 1 }} >
                     <NavLink to="/">Home</NavLink>
@@ -29,8 +29,11 @@ function Navbar ({toggleCartOpen}) {
                 <Typography variant="h6" >
                     <NavLink to="/Candies">Candies</NavLink>
                 </Typography>
+                <Typography variant="h6" >
+                    <NavLink to="/Order">Order</NavLink>
+                </Typography>
                 <IconButton edge="start"  color="inherit" aria-label="menu" onClick={toggleCartOpen}>
-                <Badge badgeContent={getTotalItems(cartItems)} color="primary">
+                <Badge badgeContent={getTotalItems(cartItems)} color="error">
                     <ShoppingCartIcon />  
                 </Badge>
                 </IconButton>

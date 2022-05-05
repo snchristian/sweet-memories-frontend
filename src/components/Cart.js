@@ -28,7 +28,7 @@ return(
      {cartItems.length === 0 ? <p>Empty Cart</p>:null}
      {cartLineItem}
     <h3>Total: ${subTotal(cartItems).toFixed(2)}</h3>
-     {cartItems.length > 0 ? <button onClick={handleRedirectToCheckout}>Proceed to Checkout</button>:null}
+     {cartItems.length > 0 ? <button color="salmon" onClick={handleRedirectToCheckout}>Proceed to Checkout</button>:null}
      </>)  
 }
 

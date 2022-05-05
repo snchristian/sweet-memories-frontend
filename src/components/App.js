@@ -5,6 +5,7 @@ import Home from "./Home"
 import CandyList from './CandyList';
 import Navbar from "./Navbar";
 import OrderSucess from "./OrderSucess";
+import Order from "./Order";
 
 function App() {
   const [candies,setCandies] = useState ([])
@@ -37,6 +38,7 @@ const toggleCartClose = () => {
        <Route path="/candies" element={<CandyList candies={candies} toggleCartClose={toggleCartClose} toggleCart={toggleCart}/>}/>
        <Route path="/checkout" element={<OrderForm/>}/>
        <Route path='/confirmation' element={<OrderSucess/>}/>
+       <Route path='/order' element={<Order/>}/>
      </Routes>
     </div>  
   );

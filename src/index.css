@@ -10,4 +10,12 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+
 }
+
+.card{
+  background-color: blue;
+  flex-direction: wrap;
+}
+
+

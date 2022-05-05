@@ -1,9 +1,16 @@
 import React from 'react'
 import { Content, ContentWrapper, Headliner, HomeContainer, Image, ImageContainer, InfoContainer, ShopButton, Title } from '../styled_components/HomeStyle'
+import {useNavigate} from "react-router-dom"
 
 
 function Home (){
-    
+    const history=useNavigate()
+
+    function handleRedirectToCandies(){
+        history("/Candies")
+
+    }
+
 
     return (
         <HomeContainer>
@@ -15,13 +22,13 @@ function Home (){
                     <InfoContainer>
                         <Title>Sweet Memories</Title>
                         <Headliner>Don't you wish you could turn back the hands of time and enjoy some of your favorite candies?  Now here is chance! Click below and take a sweet stroll down memory lane. </Headliner>
-                        <ShopButton >Shop Now</ShopButton>
+                        <ShopButton onClick={handleRedirectToCandies}>Shop Now</ShopButton>
                     </InfoContainer>
                 </Content>
             </ContentWrapper>   
         </HomeContainer>
-    )
+        )
         
 }
 
-export default Home
+export default Home;

@@ -6,8 +6,7 @@ import{Card} from "../styled_components/CandyItemStyle"
 function CandyItem ({candy,handleAddToCart}) {
 
   return (
-   <div>
-      <Card>
+    <Card>
       <div className='card'>
         <div className='body'>
           <img src={candy.image} alt={candy.name}/>
@@ -17,7 +16,7 @@ function CandyItem ({candy,handleAddToCart}) {
         </div>
       </div>
     </Card>
-    </div> 
+    
     )
 }
 

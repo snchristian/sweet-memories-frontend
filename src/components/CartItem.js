@@ -16,11 +16,11 @@ function CartItem ({item,handleAddToCart,handleRemoveFromCart}){
          <div className='buttons'>
 
              
-             <Button onClick={()=>handleRemoveFromCart(item.id)} size='small' disableElevation variant='contained'>
-                 -
+             <Button onClick={()=>handleRemoveFromCart(item.id)} style={{maxWidth: '30px', maxHeight: '40px', backgroundColor: "salmon"}}  disableElevation variant='contained'>
+                  -
              </Button>
              <p>{item.quantity}</p>
-             <Button onClick={()=>handleAddToCart(item)} size='small' disableElevation variant='contained'>
+             <Button onClick={()=>handleAddToCart(item)} style={{maxWidth: '30px', maxHeight: '40px', backgroundColor: "salmon"}}   disableElevation variant='contained'>
                  +
              </Button>
          </div>

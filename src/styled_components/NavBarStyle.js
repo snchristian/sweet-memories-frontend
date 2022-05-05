@@ -12,7 +12,7 @@ export const NavLink = styled(Link)`
     cursor: pointer;
 
     &.active{
-        color:#00FFFF;
+        color:#800000
     }
 
     

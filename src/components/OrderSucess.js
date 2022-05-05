@@ -10,7 +10,7 @@ function OrderSucess (){
     }
 
     function handleRedirectToOrderDetails(){
-        history("/orders")
+        history("/order")
     }
 
 

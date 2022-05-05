@@ -22,15 +22,26 @@ function CandyList ({candies,toggleCart,toggleCartClose}){
     const theme = useTheme();
 
     const Item = styled(Paper)(({ theme }) => ({
-        ...theme.typography.body2,
-        padding: theme.spacing(0),
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
-        margin:"10px",
-        borderRadius:"25px"
-      }));
+      ...theme.typography.body2,
+      padding: theme.spacing(0),
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+      margin:"10px",
+      borderRadius:"25px"
+    }));
 
     const drawerWidth = 240;
+
+    const CandyCard = candies.map(candy => 
+      <Grid item xs={2} key={candy.id}>
+          <Item>    
+          <CandyItem 
+          key={candy.id}
+          candy={candy}
+          handleAddToCart={handleAddToCart}
+           />
+          </Item>   
+      </Grid> )
 
 
 
@@ -39,20 +50,12 @@ function CandyList ({candies,toggleCart,toggleCartClose}){
         display: 'flex',
         alignItems: 'center',
         padding: theme.spacing(0, 1),
-        // necessary for content to be below app bar
         ...theme.mixins.toolbar,
         justifyContent: 'flex-start',
       }));
 
-    const CandyCard = candies.map(candy => 
-                <CardContainer>    
-                    <CandyItem 
-                    key={candy.id}
-                    candy={candy}
-                    handleAddToCart={handleAddToCart}
-                    />
-                </CardContainer>
-    )
+
+    
 
     function handleAddToCart (clickedCandy){
         const exist = cartItems.find(item => item.id === clickedCandy.id)
@@ -101,10 +104,13 @@ function CandyList ({candies,toggleCart,toggleCartClose}){
         <Divider />
             <Cart cartItems={cartItems} handleAddToCart={handleAddToCart} handleRemoveFromCart={handleRemoveFromCart}/> 
       </Drawer>
-
-
+      <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
         <CandyContainer>{CandyCard}</CandyContainer>
-        
+      </Grid>
+      </Box>
+
+      
         </>
     )
     
