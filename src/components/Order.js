@@ -12,14 +12,10 @@ function Order(){
         .then ((data) => setOrder(data))
         },[])
 
-        function deleteOrderCandies(candy){
-            setOrder(order.filter(order => order.id !==candy.id))
 
-        }
 
-        
     function handleRemove(candy){
-        fetch(`http://localhost:9292/orders/delete/${candy.id}}`,{
+        fetch(`http://localhost:9292/orders/delete/${candy.id}`,{
             method: "DELETE",
             headers:{
                 "Accept": "application/json",
@@ -27,9 +23,14 @@ function Order(){
                 },
             })
             .then(res => res.json())
-            .then (data => deleteOrderCandies(data))
+            .then (data => deleteOrderCandies(candy,data))
         }
 
+        function deleteOrderCandies(candy){
+            setOrder(order.filter(order => order.id !==candy.id))
+           
+
+        }
 
        const orderdetails = order.map(candy => {
             return(
