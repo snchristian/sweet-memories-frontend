@@ -60,8 +60,6 @@ function OrderForm (){
    
      }
 
-    console.log(formatedCartItems)
-
     function handleChange(event){
         setNewCustomerData({
             ...CustomerData,
@@ -118,15 +116,15 @@ function handleSubmit(event){
         <form onSubmit={handleSubmit}>
             <div className="row">
             <div className="col-50">
-                <h3>Billing Address</h3>
+                <h3>Shipping Address</h3>
                     <label>Full Name:</label>
                     <input type='text' name='fullname' placeholder='Violet Beauregrade' value={CustomerData.fullname} onChange={handleChange}/>
                     <label>Phone Number:</label>
-                    <input type='text' name='phone_Number' placeholder=' Enter Your Phone Number' value={CustomerData.phone_Number} onChange={handleChange}/>
+                    <input type='text' name='phone_Number' placeholder='2226239336' value={CustomerData.phone_Number} onChange={handleChange}/>
                     <label>Email Address:</label>
                     <input type='text' name='email_Address' placeholder='candyFeen@example.com' value={CustomerData.email_Address} onChange={handleChange}/>
                     <label>Address:</label>
-                    <input type='text' name='address' placeholder='' value={CustomerData.address} onChange={handleChange}/>
+                    <input type='text' name='address' placeholder= '7809 Druy Lane' value={CustomerData.address} onChange={handleChange}/>
                 <div className="row">
                 <div className="col-50">
                     <label>State</label>
@@ -142,7 +140,7 @@ function handleSubmit(event){
             <div className="col-50">
                 <h3>Payment</h3>
                 <label>Credit Card Number</label>
-                <input type='text' name='credit_Card_Number' placeholder="2263-9568-3700-2022" value={CustomerData.credit_Card_Number} onChange={handleChange}/>
+                <input type='text' name='credit_Card_Number' placeholder="2263956837002022" value={CustomerData.credit_Card_Number} onChange={handleChange}/>
                 <label>Cardholder Name</label>
                 <input type='text' name='cardholder_name' value={CustomerData.cardholder_name} placeholder="Violet Beauregrade" onChange={handleChange}/>
 

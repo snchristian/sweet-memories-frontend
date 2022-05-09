@@ -1,19 +1,10 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
+export const Button = styled.button`
+background-color: salmon;
+font-size:15px;
+padding:10px;
+color:white;
 
-border-bottom: 1px soild;
-padding-bottom:20px;
-margin:5px;
 
-img{
-    max-width:100px;
-    margin-left: 55px;
-    align-item:center;
-  }
-  
-  .information,.buttons{
-    display:flex;
-    justify-content: space-between;
-  }
 `

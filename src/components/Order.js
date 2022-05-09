@@ -18,24 +18,20 @@ function Order(){
         }
 
         
-        function handleRemove(candy){
-            console.log(candy)
-            fetch(`http://localhost:9292/orders/delete/${candy.id}}`,{
-                method: "DELETE",
-                headers:{
-                    "Accept": "application/json",
-                    "Content-Type": "application/json",
+    function handleRemove(candy){
+        fetch(`http://localhost:9292/orders/delete/${candy.id}}`,{
+            method: "DELETE",
+            headers:{
+                "Accept": "application/json",
+                "Content-Type": "application/json",
                 },
             })
             .then(res => res.json())
             .then (data => deleteOrderCandies(data))
         }
 
-        
-       const candies = order
-       console.log(candies)
 
-       const orderd = candies.map(candy => {
+       const orderdetails = order.map(candy => {
             return(
                 <div key={candy.id}>
                     <ProductCard >
@@ -61,7 +57,7 @@ function Order(){
     return(
     <div>
         <Title>Order Details</Title> 
-        {orderd} 
+        {orderdetails} 
         
     </div>
     

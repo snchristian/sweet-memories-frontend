@@ -2,6 +2,9 @@ import React from "react";
 import {useNavigate} from "react-router-dom"
 import CartItem from "./CartItem";
 
+import { Button } from '../styled_components/CartStyle';
+
+
 function Cart ({cartItems,handleAddToCart,handleRemoveFromCart}) {
   const history=useNavigate()
 
@@ -12,8 +15,10 @@ function handleRedirectToCheckout(){
   function subTotal(candyItems){
      return candyItems.reduce((previousValue, candy) => previousValue + candy.quantity * candy.price,0)
 
-
   }
+
+ 
+  
 
   const cartLineItem = cartItems.map(item => <CartItem
   key={item.id}
@@ -28,7 +33,7 @@ return(
      {cartItems.length === 0 ? <p>Empty Cart</p>:null}
      {cartLineItem}
     <h3>Total: ${subTotal(cartItems).toFixed(2)}</h3>
-     {cartItems.length > 0 ? <button color="salmon" onClick={handleRedirectToCheckout}>Proceed to Checkout</button>:null}
+     {cartItems.length > 0 ? <Button onClick={handleRedirectToCheckout}> Proceed to Checkout</Button>:null}
      </>)  
 }
 

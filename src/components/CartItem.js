@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 
-import { Wrapper } from '../styled_components/CartStyle';
+import { Wrapper } from '../styled_components/CartItemStyle';
 
 function CartItem ({item,handleAddToCart,handleRemoveFromCart}){
 
@@ -13,9 +13,7 @@ function CartItem ({item,handleAddToCart,handleRemoveFromCart}){
             <p> Total:${(item.price*item.quantity).toFixed(2)}</p>
         </div>
         <img src={item.image} alt={item.name}/>
-         <div className='buttons'>
-
-             
+        <div className='buttons'>
              <Button onClick={()=>handleRemoveFromCart(item.id)} style={{maxWidth: '30px', maxHeight: '40px', backgroundColor: "salmon"}}  disableElevation variant='contained'>
                   -
              </Button>
