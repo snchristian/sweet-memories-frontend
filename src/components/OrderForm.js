@@ -4,7 +4,7 @@ import { FormContainer, Wrapper } from "../styled_components/OrderFormStyle";
 import {useNavigate} from "react-router-dom"
 
 
-function OrderForm (){
+function OrderForm ({toggleOrderNavLink}){
     const[cartItems,setCartItems]=useContext(CartItemsContext) 
     const history=useNavigate()
 
@@ -35,7 +35,7 @@ function OrderForm (){
 
     const cartItem = cartItems.map(candy => {
        return(
-           <Wrapper>
+           <Wrapper key={candy.id}>
               <div className="productdetail">
                     <img src={candy.image} alt={candy.name}/>
                     <div className="details">
@@ -92,7 +92,7 @@ function handleSubmit(event){
 
         }
 
-        fetch("http://localhost:9292/orders",{
+        fetch("http://localhost:9292/order_candies",{
             method:"POST",
             headers:{
                 "Content-Type": "application/json",
@@ -104,6 +104,8 @@ function handleSubmit(event){
         
         history("/confirmation")
         handleClearCart()
+        toggleOrderNavLink()
+        
        
 
     }

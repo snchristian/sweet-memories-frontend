@@ -5,10 +5,11 @@ import CartItem from "./CartItem";
 import { Button } from '../styled_components/CartStyle';
 
 
-function Cart ({cartItems,handleAddToCart,handleRemoveFromCart}) {
+function Cart ({cartItems,handleAddToCart,handleRemoveFromCart,toggleCartClose}) {
   const history=useNavigate()
 
 function handleRedirectToCheckout(){
+  toggleCartClose()
     history("/checkout")
   }
 

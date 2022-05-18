@@ -4,7 +4,6 @@ import styled from "styled-components"
 
 export const NavLink = styled(Link)`
     color:#fff;
-    display:flex;
     align-item:center;
     text-decoration:none;
     padding: 0 1rem;
@@ -14,6 +13,5 @@ export const NavLink = styled(Link)`
     &.active{
         color:#800000
     }
-
     
     `
