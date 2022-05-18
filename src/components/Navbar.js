@@ -10,13 +10,15 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 
 
-function Navbar ({toggleCartOpen}) {
+function Navbar ({toggleCartOpen,toggleHidden}) {
     const[cartItems]=useContext(CartItemsContext)
 
 
     function getTotalItems (cartItem){
         return cartItem.reduce((prev, currentV) => prev + currentV.quantity,0)
      }
+
+   
 
 
     return (
@@ -27,10 +29,13 @@ function Navbar ({toggleCartOpen}) {
                     <NavLink to="/">Home</NavLink>
                 </Typography>
                 <Typography variant="h6" >
-                    <NavLink to="/Candies">Candies</NavLink>
+                    <NavLink to="/Candies" >Candies</NavLink>
                 </Typography>
                 <Typography variant="h6" >
-                    <NavLink to="/Order">Order</NavLink>
+                    <NavLink to="/Order"className={toggleHidden}>Order</NavLink>
+                </Typography>
+                <Typography variant="h6" >
+                    <NavLink to="/Customers">Customers</NavLink>
                 </Typography>
                 <IconButton edge="start"  color="inherit" aria-label="menu" onClick={toggleCartOpen}>
                 <Badge badgeContent={getTotalItems(cartItems)} color="error">
