@@ -5,10 +5,9 @@ import { styled, useTheme} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import { CandyContainer, CardContainer } from '../styled_components/CandyListStyle';
+import { CandyContainer} from '../styled_components/CandyListStyle';
 import CandyItem from './CandyItem';
 import Drawer from '@mui/material/Drawer';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -30,7 +29,7 @@ function CandyList ({candies,toggleCart,toggleCartClose}){
       borderRadius:"25px"
     }));
 
-    const drawerWidth = 240;
+    const drawerWidth = 280;
 
     const CandyCard = candies.map(candy => 
       <Grid item xs={2} key={candy.id}>
@@ -102,7 +101,7 @@ function CandyList ({candies,toggleCart,toggleCartClose}){
             </IconButton>
         </DrawerHeader>
         <Divider />
-            <Cart cartItems={cartItems} handleAddToCart={handleAddToCart} handleRemoveFromCart={handleRemoveFromCart}/> 
+            <Cart cartItems={cartItems} handleAddToCart={handleAddToCart} handleRemoveFromCart={handleRemoveFromCart} toggleCartClose={toggleCartClose}/> 
       </Drawer>
       <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>

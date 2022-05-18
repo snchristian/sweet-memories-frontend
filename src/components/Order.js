@@ -7,7 +7,7 @@ function Order(){
     const[order,setOrder]=useState([])
 
     useEffect ( ()=>{
-        fetch("http://localhost:9292/orders")
+        fetch("http://localhost:9292/orders/last")
         .then ((res) => res.json())
         .then ((data) => setOrder(data))
         },[])
@@ -15,7 +15,7 @@ function Order(){
 
 
     function handleRemove(candy){
-        fetch(`http://localhost:9292/orders/delete/${candy.id}`,{
+        fetch(`http://localhost:9292/order_candies/candy/${candy.id}`,{
             method: "DELETE",
             headers:{
                 "Accept": "application/json",
@@ -23,11 +23,12 @@ function Order(){
                 },
             })
             .then(res => res.json())
-            .then (data => deleteOrderCandies(candy,data))
+            .then (data => deleteOrderCandies(data))
         }
 
         function deleteOrderCandies(candy){
-            setOrder(order.filter(order => order.id !==candy.id))
+            setOrder(order.filter(order => order.id !== candy.candy_id))
+            console.log(candy)
            
 
         }
